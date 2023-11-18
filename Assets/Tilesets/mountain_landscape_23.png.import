@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://15ors3as2rxu"
-path="res://.godot/imported/hyptosis_tile-art-batch-4.png-82ea0725bea388fd1efea728e7df36e2.ctex"
+uid="uid://tfyjw6nit32g"
+path="res://.godot/imported/mountain_landscape_23.png-a436de91c0fe28749aac2f3cda8f5ae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/hyptosis_tile-art-batch-4.png"
-dest_files=["res://.godot/imported/hyptosis_tile-art-batch-4.png-82ea0725bea388fd1efea728e7df36e2.ctex"]
+source_file="res://Assets/Tilesets/mountain_landscape_23.png"
+dest_files=["res://.godot/imported/mountain_landscape_23.png-a436de91c0fe28749aac2f3cda8f5ae0.ctex"]
 
 [params]
 

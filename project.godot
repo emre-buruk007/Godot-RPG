@@ -14,3 +14,13 @@ config/name="MyRPG"
 run/main_scene="res://Scenes/GameScreens/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_1="main_character"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="pick_ups"
+2d_physics/layer_4="interactions"
+2d_physics/layer_5="environment"
+2d_physics/layer_6="projectiles"
+2d_physics/layer_7="portals"
