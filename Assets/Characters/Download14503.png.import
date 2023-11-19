@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sdna3tpmku4d"
-path="res://.godot/imported/2_DF_Damage.png-c673848f44a6c2fe1ab291aa6a7c426c.ctex"
+uid="uid://pedohisw235g"
+path="res://.godot/imported/Download14503.png-ce10262c25394fef1d53d2a78a160bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/2_DF_Damage.png"
-dest_files=["res://.godot/imported/2_DF_Damage.png-c673848f44a6c2fe1ab291aa6a7c426c.ctex"]
+source_file="res://Assets/Characters/Download14503.png"
+dest_files=["res://.godot/imported/Download14503.png-ce10262c25394fef1d53d2a78a160bf6.ctex"]
 
 [params]
 
