@@ -82,21 +82,21 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufvj6"]
-radius = 13.0
-height = 52.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4naw"]
+size = Vector2(15, 17.5)
 
 [node name="MainCharacter" type="CharacterBody2D"]
+collision_mask = 127
 script = ExtResource("1_6a6wu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bpler")
 animation = &"WalkingDown"
-frame_progress = 0.77015
+frame_progress = 0.52277
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("CapsuleShape2D_ufvj6")
+position = Vector2(0, 23.75)
+shape = SubResource("RectangleShape2D_i4naw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
