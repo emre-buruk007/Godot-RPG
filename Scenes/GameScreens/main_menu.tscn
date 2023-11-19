@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3kqjvexf0rdd"]
+[gd_scene load_steps=4 format=3 uid="uid://c3kqjvexf0rdd"]
 
 [ext_resource type="Script" path="res://Scenes/GameScreens/Scripts/main_menu.gd" id="1_frbp4"]
+[ext_resource type="AudioStream" uid="uid://byu8uxxxma41y" path="res://Assets/Music/BGM/Alexander Ehlers - Warped.mp3" id="2_e8me2"]
+[ext_resource type="Texture2D" uid="uid://0le80t2m4yj1" path="res://Assets/Images/main_menu.jpg" id="2_uyqlg"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_frbp4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uyqlg")
+expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -30,33 +41,37 @@ text = "Game Title"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MenuButtons" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="MenuButtons" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("ButtonQuit")
-focus_neighbor_bottom = NodePath("ButtonNewGame")
 theme_override_constants/separation = 10
 
-[node name="ButtonNewGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons"]
+[node name="ButtonNewGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonQuit")
 theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 32
 text = "NEW GAME"
 
-[node name="ButtonLoadGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons"]
+[node name="ButtonLoadGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "LOAD GAME"
 
-[node name="ButtonOptions" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons"]
+[node name="ButtonOptions" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "OPTIONS"
 
-[node name="ButtonQuit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons"]
+[node name="ButtonQuit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MenuButtons"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../ButtonNewGame")
+theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons/ButtonLoadGame" to="." method="_on_button_load_game_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons/ButtonOptions" to="." method="_on_button_options_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/MenuButtons/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_e8me2")
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ButtonLoadGame" to="." method="_on_button_load_game_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ButtonQuit" to="." method="_on_button_quit_pressed"]

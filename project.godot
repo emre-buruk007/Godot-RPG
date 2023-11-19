@@ -24,3 +24,7 @@ config/icon="res://icon.svg"
 2d_physics/layer_5="environment"
 2d_physics/layer_6="projectiles"
 2d_physics/layer_7="portals"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

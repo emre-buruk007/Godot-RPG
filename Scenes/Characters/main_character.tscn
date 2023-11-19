@@ -1,23 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://rr4utbe5gulh"]
+[gd_scene load_steps=13 format=3 uid="uid://rr4utbe5gulh"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Scripts/main_character.gd" id="1_6a6wu"]
 [ext_resource type="Texture2D" uid="uid://bdf1vgx0u8rsm" path="res://Assets/Characters/3_Actor1.png" id="1_ip201"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dp038"]
-atlas = ExtResource("1_ip201")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rsgmf"]
-atlas = ExtResource("1_ip201")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2j1mc"]
-atlas = ExtResource("1_ip201")
-region = Rect2(64, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_in85x"]
-atlas = ExtResource("1_ip201")
-region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ybdg"]
 atlas = ExtResource("1_ip201")
@@ -55,38 +39,6 @@ region = Rect2(128, 192, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dp038")
-}],
-"loop": true,
-"name": &"IdleDown",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rsgmf")
-}],
-"loop": true,
-"name": &"IdleLeft",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2j1mc")
-}],
-"loop": true,
-"name": &"IdleRight",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_in85x")
-}],
-"loop": true,
-"name": &"IdleUP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_7ybdg")
 }, {
 "duration": 1.0,
@@ -94,7 +46,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkingDown",
-"speed": 3.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -105,7 +57,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkingLeft",
-"speed": 3.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -116,7 +68,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkingRight",
-"speed": 3.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -127,7 +79,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"WalkingUp",
-"speed": 3.0
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufvj6"]
@@ -139,8 +91,15 @@ script = ExtResource("1_6a6wu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bpler")
-animation = &"IdleDown"
+animation = &"WalkingDown"
+frame_progress = 0.77015
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_ufvj6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
