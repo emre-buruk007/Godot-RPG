@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3kqjvexf0rdd"]
 
 [ext_resource type="Script" path="res://Scenes/GameScreens/Scripts/main_menu.gd" id="1_frbp4"]
-[ext_resource type="AudioStream" uid="uid://byu8uxxxma41y" path="res://Assets/Music/BGM/Alexander Ehlers - Warped.mp3" id="2_e8me2"]
 [ext_resource type="Texture2D" uid="uid://0le80t2m4yj1" path="res://Assets/Images/main_menu.jpg" id="2_uyqlg"]
+[ext_resource type="AudioStream" uid="uid://b3wyj4b8wxoh7" path="res://Assets/Music/BGM/Harp_0.mp3" id="3_pppxs"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_frbp4")
@@ -69,7 +69,7 @@ theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_e8me2")
+stream = ExtResource("3_pppxs")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuButtons/ButtonLoadGame" to="." method="_on_button_load_game_pressed"]
