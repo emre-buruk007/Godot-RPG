@@ -11,22 +11,22 @@ func animation_handler(status: String):
 	if dir == "right":
 		if status == "moving":
 			animated_sprite_2d.play("WalkingRight")
-		else:
+		elif status =="not moving":
 			animated_sprite_2d.play("IdleRight")
 	elif dir == "left":
 		if status == "moving":
 			animated_sprite_2d.play("WalkingLeft")
-		else:
+		elif status == "not moving":
 			animated_sprite_2d.play("IdleLeft")
 	elif dir == "up":
 		if status == "moving":
 			animated_sprite_2d.play("WalkingUp")
-		else:
+		elif status == "not moving":
 			animated_sprite_2d.play("IdleUp")
 	elif dir == "down":
 		if status == "moving":
 			animated_sprite_2d.play("WalkingDown")
-		else:
+		elif status == "not moving":
 			animated_sprite_2d.play("IdleDown")
 
 func player_movement(delta):
