@@ -1,7 +1,23 @@
-[gd_scene load_steps=47 format=3 uid="uid://rr4utbe5gulh"]
+[gd_scene load_steps=51 format=3 uid="uid://rr4utbe5gulh"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Scripts/main_character.gd" id="1_6a6wu"]
 [ext_resource type="Texture2D" uid="uid://pedohisw235g" path="res://Assets/Characters/Download14503.png" id="2_245yp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j15y"]
+atlas = ExtResource("2_245yp")
+region = Rect2(256, 1984, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o2dn"]
+atlas = ExtResource("2_245yp")
+region = Rect2(448, 1984, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1tcw"]
+atlas = ExtResource("2_245yp")
+region = Rect2(640, 1984, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhjvf"]
+atlas = ExtResource("2_245yp")
+region = Rect2(821, 1984, 124, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q7n4b"]
 atlas = ExtResource("2_245yp")
@@ -173,6 +189,23 @@ region = Rect2(512, 512, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bpler"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j15y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o2dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1tcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhjvf")
+}],
+"loop": true,
+"name": &"AttackRight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q7n4b")
@@ -355,9 +388,11 @@ collision_mask = 127
 script = ExtResource("1_6a6wu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_bpler")
-animation = &"WalkingUp"
-frame_progress = 0.628164
+animation = &"AttackRight"
+frame = 3
+frame_progress = 0.887408
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 18)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=62 format=3 uid="uid://ynuq1py20ul3"]
+[gd_scene load_steps=63 format=3 uid="uid://ynuq1py20ul3"]
 
+[ext_resource type="Script" path="res://Scenes/Characters/Scripts/Zombie.gd" id="1_w7bcu"]
 [ext_resource type="Texture2D" uid="uid://5tf2xwfuoxq5" path="res://Assets/Characters/zombie.png" id="1_x7vjv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tnie0"]
@@ -458,6 +459,7 @@ radius = 117.004
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 17
+script = ExtResource("1_w7bcu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_30ces")
@@ -470,6 +472,7 @@ position = Vector2(1, 15)
 shape = SubResource("CapsuleShape2D_crgtp")
 
 [node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_6ek0a")
