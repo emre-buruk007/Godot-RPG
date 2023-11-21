@@ -346,9 +346,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lill5"]
-height = 36.0
+radius = 9.0
+height = 22.0
 
 [node name="MainCharacter" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_mask = 127
 script = ExtResource("1_6a6wu")
 
@@ -358,7 +360,7 @@ animation = &"Death"
 frame_progress = 0.875149
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(0, 18)
 shape = SubResource("CapsuleShape2D_lill5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
