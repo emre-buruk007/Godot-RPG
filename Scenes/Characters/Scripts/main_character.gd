@@ -5,9 +5,13 @@ extends CharacterBody2D
 @export var move_speed = 130
 var current_direction = "none"
 
+func attack_handler():
+	animation_handler("Attack")
+
 func animation_handler(status: String):
 	var dir = current_direction
 	
+	# movement animations
 	if dir == "right":
 		if status == "moving":
 			animated_sprite_2d.play("WalkingRight")
@@ -28,6 +32,18 @@ func animation_handler(status: String):
 			animated_sprite_2d.play("WalkingDown")
 		elif status == "not moving":
 			animated_sprite_2d.play("IdleDown")
+	
+	# Attack animations
+	if dir == "right" and status == "Attack":
+		animated_sprite_2d.play("AttackRight")
+		await(animated_sprite_2d.finished)
+	elif dir == "left" and status == "Attack":
+		animated_sprite_2d.play("AttackLeft")
+	elif dir == "up" and status == "Attack":
+		animated_sprite_2d.play("AttackUp")
+	elif dir == "down" and status == "Attack":
+		animated_sprite_2d.play("AttackDown")
+	
 
 func player_movement(delta):
 	
@@ -60,3 +76,6 @@ func player_movement(delta):
 
 func _physics_process(delta):
 	player_movement(delta)
+	
+	if Input.is_action_just_pressed("Attack"):
+		attack_handler()
