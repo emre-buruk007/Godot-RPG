@@ -36,7 +36,7 @@ func animation_handler(status: String):
 	# Attack animations
 	if dir == "right" and status == "Attack":
 		animated_sprite_2d.play("AttackRight")
-		await(animated_sprite_2d.finished)
+		await(animated_sprite_2d.animation_finished)
 	elif dir == "left" and status == "Attack":
 		animated_sprite_2d.play("AttackLeft")
 	elif dir == "up" and status == "Attack":
